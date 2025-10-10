@@ -1,0 +1,99 @@
+/* General Styling */
+body {
+    background-color: #0b0b0b;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Project Card Styling */
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+    position: relative;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px rgba(168, 85, 247, 0.35);
+}
+
+/* Pulsing glow animation */
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, transparent 70%);
+    animation: pulseGlow 4s infinite ease-in-out;
+    z-index: 0;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+.project-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Buttons */
+.btn-glow {
+    background: linear-gradient(90deg, #7e22ce, #a855f7);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
+    transform: scale(1.03);
+}
+
+/* Badges */
+.bg-gradient-purple {
+    background: linear-gradient(90deg, #7e22ce, #a855f7);
+}
+
+/* Media container */
+.media-container img,
+.media-container video {
+    width: 100%;
+    border-radius: 0.75rem;
+    object-fit: cover;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
